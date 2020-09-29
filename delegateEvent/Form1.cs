@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Runtime.Remoting.Channels;
 using System.Text;
@@ -29,6 +30,12 @@ namespace delegateEvent
         
         }
 
-
+        private void button1_Click(object sender, EventArgs e)
+        {
+            saveFileDialog1.Filter = "텍트스파일 (*.txt)|*.txt";
+            saveFileDialog1.ShowDialog();
+            File.WriteAllText(saveFileDialog1.FileName, textBox1.Text);
+            //MessageBox.Show(saveFileDialog1.FileName);
+        }
     }
 }
